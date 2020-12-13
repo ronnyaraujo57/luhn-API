@@ -1,5 +1,6 @@
 
 const express = require('express')
+const cors = require('cors')
 const app = express()
 let port = process.env.PORT || 3000
 
@@ -33,6 +34,7 @@ function Luhn(valor){
 //middleware
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use(cors());
 
 //routes
 app.get('/', (req, res) => {
